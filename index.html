@@ -1,0 +1,603 @@
+Here is the updated HTML document with all text and margins bolded for a more prominent, print-ready presentation. Column headers and key data points are now clearly emphasized.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>PRE-ACSEE 2026 Results | Dr. John Pombe Magufuli Secondary</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #eef2f7;
+            padding: 30px 20px;
+            color: #1e2a3e;
+            font-weight: bold;
+        }
+        .results-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .necta-header {
+            background: linear-gradient(135deg, #0b3b5f 0%, #0a2c44 100%);
+            padding: 1.8rem 2rem;
+            color: white;
+            border-bottom: 5px solid #f4c542;
+            font-weight: bold;
+        }
+        .necta-header h2 { font-size: 1.4rem; font-weight: 700; }
+        .school-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 12px;
+            background: rgba(255,255,240,0.15);
+            display: inline-block;
+            padding: 5px 18px;
+            border-radius: 40px;
+        }
+        .division-summary { background: #f8fafc; padding: 1.5rem 2rem; border-bottom: 1px solid #dce5ec; }
+        .summary-title { font-weight: 800; font-size: 1.2rem; margin-bottom: 1rem; color: #0f3b5c; }
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            font-weight: bold;
+        }
+        .summary-table th, .summary-table td {
+            border: 1px solid #e2e8f0;
+            padding: 10px 12px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .summary-table th { background-color: #1f4662; color: white; font-weight: 800; }
+        .toolbar {
+            background: white;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            font-weight: bold;
+        }
+        .search-box input {
+            width: 260px;
+            padding: 12px 18px;
+            border-radius: 60px;
+            border: 1px solid #cbd5e1;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .filter-group { display: flex; gap: 12px; flex-wrap: wrap; }
+        .filter-group select, .filter-group button {
+            padding: 8px 18px;
+            border-radius: 40px;
+            border: 1px solid #cbd5e1;
+            background: white;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .reset-btn { background-color: #f0f2f5; }
+        .results-table-wrapper { overflow-x: auto; padding: 0 1rem 1.5rem 1rem; }
+        .candidate-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            background: white;
+            font-weight: bold;
+        }
+        .candidate-table th {
+            background-color: #1f4662;
+            color: white;
+            padding: 14px 8px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            font-weight: 800;
+            font-size: 0.85rem;
+        }
+        .candidate-table td {
+            border-bottom: 1px solid #e9edf2;
+            padding: 10px 6px;
+            vertical-align: middle;
+            font-weight: bold;
+        }
+        .candidate-table td:nth-child(1) { text-align: center; }
+        .candidate-table td:nth-child(2) { text-align: center; }
+        .candidate-table td:nth-child(3) { text-align: left; font-weight: 700; }
+        .candidate-table td:nth-child(4) { text-align: center; }
+        .candidate-table td:nth-child(5) { text-align: center; font-weight: 800; }
+        .candidate-table td:nth-child(6) { text-align: left; }
+        .candidate-table tr:hover { background-color: #f5f9ff; }
+        .division-badge {
+            font-weight: 800;
+            padding: 4px 8px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            display: inline-block;
+        }
+        .div-I { background: #c8f0e1; color: #116b3f; }
+        .div-II { background: #cfe3fc; color: #1e5b8a; }
+        .div-III { background: #ffe6c2; color: #b45f06; }
+        .div-IV { background: #ffdbd4; color: #bc3f2e; }
+        .div-0, .div-ABS { background: #e9ecef; color: #5a6268; }
+        .subject-cell { font-size: 0.7rem; line-height: 1.4; white-space: nowrap; font-weight: bold; }
+        footer {
+            background: #f1f5f9;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.75rem;
+            color: #4b6a8b;
+            font-weight: bold;
+        }
+        @media (max-width: 780px) { .subject-cell { white-space: normal; } }
+    </style>
+</head>
+<body>
+<div class="results-container">
+    <div class="necta-header">
+        <h2>PRE-NATIONAL EXAMINATIONS COUNCIL OF TANZANIA (PRE-NECTA)</h2>
+        <div class="school-name">S6064 DR. JOHN POMBE MAGUFULI (U) SECONDARY SCHOOL</div>
+        <div style="margin-top: 12px; font-size:0.9rem;">PRE-ACSEE 2026 EXAMINATION RESULTS</div>
+    </div>
+    <div class="division-summary" id="divisionSummaryPanel"></div>
+    <div class="toolbar">
+        <div class="search-box"><input type="text" id="searchInput" placeholder="🔍 Search name, CNO, division..."></div>
+        <div class="filter-group">
+            <select id="divisionFilter"><option value="ALL">All Divisions</option><option value="I">Division I</option><option value="II">Division II</option><option value="III">Division III</option><option value="IV">Division IV</option><option value="0">Division 0 (Fail)</option><option value="ABS">Absent</option></select>
+            <select id="sexFilter"><option value="ALL">All</option><option value="F">Female</option><option value="M">Male</option></select>
+            <button id="resetFiltersBtn" class="reset-btn">⟳ Reset</button>
+        </div>
+    </div>
+    <div class="results-table-wrapper">
+        <table class="candidate-table" id="resultsTable">
+            <thead>
+                <tr><th>CNO</th><th>SEX</th><th>FULL NAME</th><th>DIV</th><th>TOTAL PTS</th><th>SUBJECTS & GRADES</th></tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+    <footer>© PRE-NECTA PRE-ACSEE 2026 | Points: A=1, B=2, C=3, D=4, E=5, S=6, F=7, X=7. Division I (3-9 pts), II (10-12), III (13-17), IV (18-19), 0 (20-21). Sum of best 3 core subjects (PHY, CHEM, BIO, GEO, ADV/MATH).</footer>
+</div>
+
+<script>
+    const gradeToPoint = { 'A':1, 'B':2, 'C':3, 'D':4, 'E':5, 'S':6, 'F':7, 'X':7 };
+    
+    function getDivision(points) {
+        if (points >= 3 && points <= 9) return "I";
+        if (points >= 10 && points <= 12) return "II";
+        if (points >= 13 && points <= 17) return "III";
+        if (points >= 18 && points <= 19) return "IV";
+        return "0";
+    }
+    
+    // Complete student data - PCM students have NO BAM subject displayed (BAM field is ignored)
+    // Format: [CNO, SEX, NAME, COMBO, BIO, CHEM, PHY, BAM, ADV_MATH, GS, GEO]
+    const rawData = [
+        // PCM Students (0501-0542)
+        ["S6064/0501","F","AIMAN SAID SHAAME","PCM","X","E","E","X","D","D","X"],
+        ["S6064/0502","F","FAISHA JUMA MWANDAZI","PCM","X","E","E","X","S","F","X"],
+        ["S6064/0503","F","FATMA ALI MAKAME","PCM","X","D","E","X","E","D","X"],
+        ["S6064/0504","F","GHANIMA KASSIM MAHZOUM","PCM","X","E","S","X","F","F","X"],
+        ["S6064/0505","F","HALIMA SULEIMAN ALI","PCM","X","D","E","X","C","F","X"],
+        ["S6064/0506","F","HAMISA SAID ADAM","PCM","X","E","S","X","E","S","X"],
+        ["S6064/0507","F","HULAIFAT ALI JUMA","PCM","X","C","F","X","F","E","X"],
+        ["S6064/0508","F","HUNAINAT HAJI SEREWEJI","PCM","X","D","E","X","E","F","X"],
+        ["S6064/0509","F","LAILA OTHMAN SONGORO","PCM","X","E","F","X","S","S","X"],
+        ["S6064/0510","F","LATIFA ALI KHAMIS","PCM","X","D","D","X","C","F","X"],
+        ["S6064/0511","F","NAOMI MUSSA MBULULO","PCM","X","E","E","X","F","E","X"],
+        ["S6064/0512","F","RAYYAN MOHAMED JUMA","PCM","X","B","D","X","C","B","X"],
+        ["S6064/0513","F","RUFAIDA HAJI SALUM","PCM","X","D","D","X","D","D","X"],
+        ["S6064/0514","F","RUKAIYA JUMA AME","PCM","X","D","E","X","D","F","X"],
+        ["S6064/0515","F","SALAMA KASSIM OMAR","PCM","X","C","D","X","D","F","X"],
+        ["S6064/0516","F","ZUWENA SAID KHALFAN","PCM","X","E","F","X","S","S","X"],
+        ["S6064/0517","M","ABDALLA SAID HAMAD","PCM","X","E","E","X","E","F","X"],
+        ["S6064/0518","M","ABDILLAH HAMAD NASSOR","PCM","X","E","D","X","S","E","X"],
+        ["S6064/0519","M","ABDUL-RAUF MAKAME ISSA","PCM","X","E","E","X","E","S","X"],
+        ["S6064/0520","M","ABDULBASEER MOHAMED ABDALLAH","PCM","X","C","B","X","D","F","X"],
+        ["S6064/0521","M","ABUBAKAR ISSA KIDETE","PCM","X","C","E","X","S","S","X"],
+        ["S6064/0522","M","ABUBAKARI HASSANI HAJI","PCM","X","D","E","X","E","F","X"],
+        ["S6064/0523","M","AHMAD HAMID HAJI","PCM","X","E","S","X","S","F","X"],
+        ["S6064/0524","M","AIMAR OMAR ABDALLA","PCM","X","E","S","X","S","S","X"],
+        ["S6064/0525","M","ALEI MAKAME ISSA","PCM","X","C","D","X","S","F","X"],
+        ["S6064/0526","M","ANUWARI ABDALLA ALI","PCM","X","D","C","X","A","F","X"],
+        ["S6064/0527","M","HAJI KHAMIS HAJI","PCM","X","E","E","X","X","D","X"],
+        ["S6064/0528","M","HASHIR MAABAD ALI","PCM","X","D","S","X","E","E","X"],
+        ["S6064/0529","M","ILIASA MAULID MARA","PCM","X","E","E","X","E","E","X"],
+        ["S6064/0530","M","IS-HAKA OMARY IDDI","PCM","X","X","X","X","X","X","X"],
+        ["S6064/0531","M","MASOUD JUMA KASSIM","PCM","X","D","E","X","E","F","X"],
+        ["S6064/0532","M","MASSOUD MWALIM HAMAD","PCM","X","X","S","X","E","F","X"],
+        ["S6064/0533","M","MOHAMMED ABDALLAH MOHAMMED","PCM","X","E","S","X","S","S","X"],
+        ["S6064/0534","M","MUSSA ALI OMAR","PCM","X","E","E","X","D","E","X"],
+        ["S6064/0535","M","NASSOR TALIB USSI","PCM","X","S","S","X","F","F","X"],
+        ["S6064/0536","M","SAHIM JUMA MASOUD","PCM","X","C","B","X","B","F","X"],
+        ["S6064/0537","M","SALUM ABDALLA SALUM","PCM","X","D","D","X","D","S","X"],
+        ["S6064/0538","M","SULEIMAN SAID SULEIMAN","PCM","X","E","S","X","D","E","X"],
+        ["S6064/0539","M","THABITI ABUJ SULEIMAN","PCM","X","D","E","X","E","E","X"],
+        ["S6064/0540","M","YAHYA KHAMIS HAMAD","PCM","X","S","S","X","E","F","X"],
+        ["S6064/0541","M","YUSSUF ABDALLA ALI","PCM","X","S","B","X","D","S","X"],
+        ["S6064/0542","M","YUSSUF ALAWI YUSSUF","PCM","X","E","D","X","E","S","X"],
+        // PCB Students (0543-0717)
+        ["S6064/0543","F","ADILA ABDULHAMID AMEIR","PCB","C","D","E","S","X","C","X"],
+        ["S6064/0544","F","AGNES BATISTA MASSAVA","PCB","B","S","F","F","X","C","X"],
+        ["S6064/0545","F","AHLAM OMAR JUMA","PCB","E","E","F","F","X","E","X"],
+        ["S6064/0546","F","AISHA MWALIM OMAR","PCB","S","D","F","F","X","E","X"],
+        ["S6064/0547","F","ALAMA ALI KESI","PCB","E","F","F","F","X","E","X"],
+        ["S6064/0548","F","AMANA KHAMIS SULEIMAN","PCB","E","D","E","F","X","F","X"],
+        ["S6064/0549","F","ASMA ALI KHALFAN","PCB","B","E","E","S","X","D","X"],
+        ["S6064/0550","F","ASYA ALI KHAMIS","PCB","D","E","S","F","X","E","X"],
+        ["S6064/0551","F","ATFA MASOUD SULEIMAN","PCB","B","D","E","F","X","E","X"],
+        ["S6064/0552","F","AWATIF MALIK PETER","PCB","C","E","E","F","X","D","X"],
+        ["S6064/0553","F","AYSHA HASSAN ALI","PCB","C","E","F","F","X","D","X"],
+        ["S6064/0554","F","BIUBWA ABDALLA MWITA","PCB","A","D","D","E","X","F","X"],
+        ["S6064/0555","F","BUTHINA HAMID MAJID","PCB","C","D","S","S","X","C","X"],
+        ["S6064/0556","F","DHUL-KHULAIFAT SALUM KHAMIS","PCB","B","D","D","C","X","E","X"],
+        ["S6064/0557","F","FARHAT MAKAME ALI","PCB","S","F","S","F","X","F","X"],
+        ["S6064/0558","F","FARHIN MOHAMMED KHAMIS","PCB","C","D","E","D","X","D","X"],
+        ["S6064/0559","F","FATMA HASSAN SULEIMAN","PCB","C","C","C","C","X","C","X"],
+        ["S6064/0560","F","FATMA MOHAMED SAID","PCB","C","E","E","S","X","C","X"],
+        ["S6064/0561","F","GHANIE ALI HAMAD","PCB","E","E","S","F","X","S","X"],
+        ["S6064/0562","F","GHAZILLA WAZIR SAID","PCB","E","E","S","F","X","F","X"],
+        ["S6064/0563","F","HAFSA OMAR KHAMIS","PCB","S","D","S","S","X","S","X"],
+        ["S6064/0564","F","HAITHAM MOHAMED KASSIM","PCB","C","E","E","S","X","S","X"],
+        ["S6064/0565","F","HAJRA MOHAMMED KHAMIS","PCB","D","D","E","E","X","E","X"],
+        ["S6064/0566","F","HAJRA MTUMWA HADHARY","PCB","D","E","S","F","X","F","X"],
+        ["S6064/0567","F","HAMIDA MUSSA KHAMIS","PCB","D","D","E","F","X","S","X"],
+        ["S6064/0568","F","HANIFA ABASS OMAR","PCB","D","E","S","S","X","E","X"],
+        ["S6064/0569","F","HASNAT MOHAMMED SALUM","PCB","E","E","S","F","X","D","X"],
+        ["S6064/0570","F","HAULA JAMALI JUMA","PCB","D","E","E","F","X","D","X"],
+        ["S6064/0571","F","HUSNA OMAR SULEIMAN","PCB","E","D","E","D","X","D","X"],
+        ["S6064/0572","F","ILHAM ABDALLA HASSAN","PCB","E","D","F","S","X","F","X"],
+        ["S6064/0573","F","INTITHAR IDDI MOHAMMED","PCB","C","D","E","F","X","D","X"],
+        ["S6064/0574","F","JENNIFER BERNARD PETER","PCB","D","D","D","S","X","D","X"],
+        ["S6064/0575","F","KAUTHAR JUMA HAMAD","PCB","C","C","E","E","X","F","X"],
+        ["S6064/0576","F","KAUTHAR MOHAMED MRISHO","PCB","D","E","E","E","X","E","X"],
+        ["S6064/0577","F","KHADIJA HASSAN SHAABAN","PCB","D","D","S","F","X","E","X"],
+        ["S6064/0578","F","KHAIRAT DAWA HAJI","PCB","C","D","E","F","X","F","X"],
+        ["S6064/0579","F","KHAIRAT MWANJIE MAALIM","PCB","B","D","E","F","X","E","X"],
+        ["S6064/0580","F","LAILAT ALI JUMA","PCB","C","D","E","E","X","E","X"],
+        ["S6064/0581","F","LAURAT ALI HASSAN","PCB","E","E","S","F","X","F","X"],
+        ["S6064/0582","F","LELA JUMA SALEH","PCB","B","C","S","F","X","E","X"],
+        ["S6064/0583","F","LUBAINA MAHMOUD HASSAN","PCB","D","S","S","F","X","F","X"],
+        ["S6064/0584","F","MAIMUNA MASOUD KHAMIS","PCB","X","E","E","F","X","E","X"],
+        ["S6064/0585","F","MARIAM ALI SIMAI","PCB","C","E","S","F","X","E","X"],
+        ["S6064/0586","F","MARYAM SHAAME ALI","PCB","A","A","E","E","X","E","X"],
+        ["S6064/0587","F","MEYUU ABDULLATIF SUBA","PCB","C","E","E","F","X","E","X"],
+        ["S6064/0588","F","MTUMWA HAJI ALI","PCB","B","C","D","E","X","C","X"],
+        ["S6064/0589","F","MUNAWAR MRISHO HAMAD","PCB","C","D","D","F","X","C","X"],
+        ["S6064/0590","F","MUNIRA BADRU HAJI","PCB","E","D","S","F","X","E","X"],
+        ["S6064/0591","F","MUNIRA HAMAD SAID","PCB","C","D","D","D","X","S","X"],
+        ["S6064/0592","F","MUZDALIFAT MUHINA KHAMIS","PCB","C","E","S","F","X","D","X"],
+        ["S6064/0593","F","MWAJUMA FAKI MOHAMED","PCB","D","E","F","F","X","F","X"],
+        ["S6064/0594","F","MWAWANU OTHMAN HAMADI","PCB","E","D","S","E","X","S","X"],
+        ["S6064/0595","F","NABILA MOHAMMED HASSAN","PCB","D","C","E","E","X","S","X"],
+        ["S6064/0596","F","NADHIFA CHOUM ALI","PCB","E","E","S","F","X","E","X"],
+        ["S6064/0597","F","NADHIFAT OTHMAN HAJI","PCB","D","F","D","S","X","E","X"],
+        ["S6064/0598","F","NADIA SALUM ABEID","PCB","C","D","S","F","X","E","X"],
+        ["S6064/0599","F","NAIFAT FADHIL JUMA","PCB","C","D","E","F","X","C","X"],
+        ["S6064/0600","F","NAJLA HASSAN MZEE","PCB","D","E","E","F","X","E","X"],
+        ["S6064/0601","F","NASIRIYA RAMADHAN ALI","PCB","A","C","D","D","X","E","X"],
+        ["S6064/0602","F","NASRA ALI AHMED","PCB","B","C","E","F","X","E","X"],
+        ["S6064/0603","F","NATALYA GILBERT JOSEPH","PCB","D","S","E","S","X","C","X"],
+        ["S6064/0604","F","NAUWARA MANSOUR SAID","PCB","C","D","E","F","X","D","X"],
+        ["S6064/0605","F","NAYLA SALUM ALI","PCB","B","E","S","F","X","E","X"],
+        ["S6064/0606","F","NEEMA ABDULLA KHAMIS","PCB","D","E","E","C","X","D","X"],
+        ["S6064/0607","F","NUR-HAT ALLY TALIB","PCB","D","D","S","F","X","E","X"],
+        ["S6064/0608","F","NUSAYBA MASOUD ABRAHMAN","PCB","C","E","E","F","X","E","X"],
+        ["S6064/0609","F","PAULINA MARTIN JAFET","PCB","C","S","E","F","X","E","X"],
+        ["S6064/0610","F","RAHMA RASHID MOHAMED","PCB","D","D","E","E","X","C","X"],
+        ["S6064/0611","F","RAMLA SIRAJI HAMZA","PCB","C","E","E","S","X","E","X"],
+        ["S6064/0612","F","RAUDHAT ALI MIRAJI","PCB","D","D","E","F","X","E","X"],
+        ["S6064/0613","F","RAUDHAT OTHMAN ALI","PCB","D","E","E","S","X","E","X"],
+        ["S6064/0614","F","RAUHIYA KHATIBU AME","PCB","D","E","E","F","X","E","X"],
+        ["S6064/0615","F","RAYA SAID ALI","PCB","D","D","E","F","X","D","X"],
+        ["S6064/0616","F","RUKAIYA ALI HASSAN","PCB","C","E","E","S","X","C","X"],
+        ["S6064/0617","F","SABRA HASSAN AME","PCB","C","E","E","F","X","E","X"],
+        ["S6064/0618","F","SABRA MOHAMED BILAL","PCB","C","C","S","S","X","D","X"],
+        ["S6064/0619","F","SADA JAKU MAKAME","PCB","D","E","S","F","X","D","X"],
+        ["S6064/0620","F","SAHIYA ALLY KHAMIS","PCB","B","E","E","C","X","C","X"],
+        ["S6064/0621","F","SALMA ABDI ABDALLA","PCB","C","E","E","S","X","C","X"],
+        ["S6064/0622","F","SALMA THABIT ABASS","PCB","C","E","S","F","X","C","X"],
+        ["S6064/0623","F","SAMIA ABDULRAHMAN SHAIB","PCB","B","C","E","C","X","D","X"],
+        ["S6064/0624","F","SUL-HIYA RASHID HAMAD","PCB","D","C","E","S","X","E","X"],
+        ["S6064/0625","F","SUMAIYA SALUM SAID","PCB","C","E","E","F","X","C","X"],
+        ["S6064/0626","F","SUMAYA JUMA KHAMIS","PCB","D","E","E","F","X","B","X"],
+        ["S6064/0627","F","SWAFAA KHATIB HAMAD","PCB","D","E","F","E","X","S","X"],
+        ["S6064/0628","F","TAITHIRA ALAWY RAMADHAN","PCB","C","D","S","S","X","D","X"],
+        ["S6064/0629","F","THANIYA KHAMIS MAKAME","PCB","C","D","E","E","X","C","X"],
+        ["S6064/0630","F","THUREA TAHIR ABDALLA","PCB","D","E","E","F","X","E","X"],
+        ["S6064/0631","F","THUREYA ISSA MASOUD","PCB","D","E","E","S","X","D","X"],
+        ["S6064/0632","F","TIME JUMA MAKAME","PCB","S","E","E","S","X","E","X"],
+        ["S6064/0633","F","TWALAA AHMADA SULEIMAN","PCB","E","C","D","F","X","E","X"],
+        ["S6064/0634","F","UMMI KOMBO BAKAR","PCB","C","D","D","E","X","F","X"],
+        ["S6064/0635","F","UMUL-AYMAN NACHIA MWADINI","PCB","C","C","E","D","X","D","X"],
+        ["S6064/0636","F","WADHHA SHABAN OMAR","PCB","D","D","E","F","X","E","X"],
+        ["S6064/0637","F","YUSRA JUMA NASSOR","PCB","D","D","S","F","X","F","X"],
+        ["S6064/0638","F","YUSRA MOHAMMED KHAMIS","PCB","D","D","S","E","X","S","X"],
+        ["S6064/0639","F","YUSSRA ALI MMANGA","PCB","D","E","E","F","X","D","X"],
+        ["S6064/0640","F","ZAINAB MUSSA ABDALLA","PCB","F","E","F","F","X","F","X"],
+        ["S6064/0641","F","ZAKIA CHANDE SAID","PCB","E","E","E","F","X","D","X"],
+        ["S6064/0642","F","ZAKIYA MOHAMED KHAMIS","PCB","E","E","F","F","X","F","X"],
+        ["S6064/0643","F","ZUHURA JUMA SOUD","PCB","D","E","S","F","X","E","X"],
+        ["S6064/0644","M","ABDALLA FAROUK ABDALLA","PCB","E","E","E","F","X","F","X"],
+        ["S6064/0645","M","ABDILLAHI MOHAMED HAMZA","PCB","A","E","E","F","X","F","X"],
+        ["S6064/0646","M","ABDUL-HALIM HAFIDH BADRU","PCB","C","D","E","E","X","S","X"],
+        ["S6064/0647","M","ABDUL-HAMID MOHAMED IBRAHIM","PCB","C","C","E","S","X","F","X"],
+        ["S6064/0648","M","ABDULAZIZ ALI NASSOR","PCB","E","E","S","F","X","F","X"],
+        ["S6064/0649","M","ABDULMAJID ABUBAKAR SAID","PCB","D","S","E","F","X","C","X"],
+        ["S6064/0650","M","ABDULMAJID AMEIR KHAMIS","PCB","D","S","E","F","X","F","X"],
+        ["S6064/0651","M","ABUUBAKAR SWALEH HAJI","PCB","C","E","E","E","X","F","X"],
+        ["S6064/0652","M","ADIL AMINI ALI","PCB","A","A","C","S","X","E","X"],
+        ["S6064/0653","M","AHMAD ABDALLA JAFFAR","PCB","E","F","F","F","X","F","X"],
+        ["S6064/0654","M","AHMAD AWADH SAIDI","PCB","E","E","E","F","X","E","X"],
+        ["S6064/0655","M","AHMED KHAMIS HAJI","PCB","A","A","E","S","X","S","X"],
+        ["S6064/0656","M","AKLAM OMARY TOFIKI","PCB","B","E","E","E","X","S","X"],
+        ["S6064/0657","M","ALI HAMISI MOHAMED","PCB","B","B","E","F","X","E","X"],
+        ["S6064/0658","M","ALI MOH'D ALI","PCB","C","E","S","F","X","F","X"],
+        ["S6064/0659","M","ALI MOHAMMED ALI","PCB","B","E","S","F","X","C","X"],
+        ["S6064/0660","M","AMOUR TAJO ISSA","PCB","E","D","E","F","X","E","X"],
+        ["S6064/0661","M","BILALI ABDALA ALLY","PCB","B","D","E","F","X","E","X"],
+        ["S6064/0662","M","FAHMI RAMADHAN ABASS","PCB","D","D","E","E","X","C","X"],
+        ["S6064/0663","M","HABIB SALIM MOHAMED","PCB","B","E","E","F","X","D","X"],
+        ["S6064/0664","M","HABIBU MAJID ALI","PCB","D","D","F","F","X","E","X"],
+        ["S6064/0665","M","HAJI BAKILI HAJI","PCB","D","S","X","F","X","F","X"],
+        ["S6064/0666","M","HARITH OTHMAN HAMAD","PCB","D","E","E","E","X","E","X"],
+        ["S6064/0667","M","HASHIM WAHID RAJAB","PCB","E","E","F","F","X","E","X"],
+        ["S6064/0668","M","HASSAN JUMA KHATIB","PCB","E","E","E","F","X","E","X"],
+        ["S6064/0669","M","HASSAN TAMIM SHAMSI","PCB","C","E","E","F","X","S","X"],
+        ["S6064/0670","M","HUSSEIN AHMADA OMAR","PCB","B","C","D","D","X","F","X"],
+        ["S6064/0671","M","HUSSEIN JAALA PANDU","PCB","C","D","F","F","X","F","X"],
+        ["S6064/0672","M","IBRAHIM SALUM ALI","PCB","E","D","F","F","X","E","X"],
+        ["S6064/0673","M","IBRAHIM SALUM JUMA","PCB","C","D","S","F","X","F","X"],
+        ["S6064/0674","M","IMRAN SALUM MOHAMED","PCB","D","E","E","S","X","F","X"],
+        ["S6064/0675","M","IS-MAIL HAJI MAKAME","PCB","B","E","E","F","X","F","X"],
+        ["S6064/0676","M","IS-MAIL OMAR SHEHA","PCB","C","S","S","F","X","D","X"],
+        ["S6064/0677","M","ISMAIL KHAMIS HAMAD","PCB","D","S","S","F","X","F","X"],
+        ["S6064/0678","M","ISMAILI SHARIFF HAJI","PCB","D","S","F","F","X","F","X"],
+        ["S6064/0679","M","ISSA MKADAM HAJI","PCB","E","E","E","F","X","E","X"],
+        ["S6064/0680","M","JUMA OMAR KHALFAN","PCB","D","S","E","F","X","F","X"],
+        ["S6064/0681","M","KHAMIS MWINCHANDE NUHU","PCB","C","S","S","F","X","S","X"],
+        ["S6064/0682","M","KHUSSAM KHATIB SIMAI","PCB","B","E","S","E","X","E","X"],
+        ["S6064/0683","M","KITWANA SABRI ALLI","PCB","C","E","S","F","X","F","X"],
+        ["S6064/0684","M","MAH-SHAR ABDALLA MAKAME","PCB","C","E","S","F","X","E","X"],
+        ["S6064/0685","M","MAHIR MFAUME HASHIM","PCB","D","E","S","F","X","F","X"],
+        ["S6064/0686","M","MAHIR OMAR HAMAD","PCB","B","E","E","S","X","C","X"],
+        ["S6064/0687","M","MANSOUR RAMADHAN MAWAZO","PCB","S","S","S","F","X","E","X"],
+        ["S6064/0688","M","MOHAMED HASSAN MOHAMED","PCB","E","S","S","F","X","E","X"],
+        ["S6064/0689","M","MOHAMED PONGWA SALUM","PCB","C","E","S","F","X","S","X"],
+        ["S6064/0690","M","MOHAMED SULEIMAN ABDALLA","PCB","B","B","C","C","X","D","X"],
+        ["S6064/0691","M","MUDHAKIR ALLY KASSIM","PCB","B","E","S","S","X","E","X"],
+        ["S6064/0692","M","MUHAMMAD ALI ABRAHIM","PCB","X","X","X","X","X","X","X"],
+        ["S6064/0693","M","MUNIR ALI MOHAMED","PCB","C","D","S","F","X","S","X"],
+        ["S6064/0694","M","MUNTASIR SAADI ABDULRAHMAN","PCB","D","E","D","S","X","D","X"],
+        ["S6064/0695","M","MUSSA HAMAD SULEIMAN","PCB","D","E","E","F","X","F","X"],
+        ["S6064/0696","M","MUSSA HULA MAKAME","PCB","C","S","S","F","X","E","X"],
+        ["S6064/0697","M","NABIL MOHAMED SALUM","PCB","D","C","S","F","X","C","X"],
+        ["S6064/0698","M","NAHID ZAMANI KHAMIS","PCB","D","E","S","F","X","E","X"],
+        ["S6064/0699","M","NASSOR ALI NASSOR","PCB","C","S","S","F","X","F","X"],
+        ["S6064/0700","M","NAWAFU RASHID ALI","PCB","E","S","F","F","X","F","X"],
+        ["S6064/0701","M","RAKABU HASSAN SAID","PCB","C","F","E","F","X","F","X"],
+        ["S6064/0702","M","RAMADHAN HAFIDH SULEIMAN","PCB","E","F","F","F","X","F","X"],
+        ["S6064/0703","M","RAMADHAN OMAR ALI","PCB","C","S","E","F","X","E","X"],
+        ["S6064/0704","M","SABRI OMAR SAID","PCB","D","E","E","S","X","S","X"],
+        ["S6064/0705","M","SAID MOHAMED SAID","PCB","E","E","S","F","X","F","X"],
+        ["S6064/0706","M","SALIM ALI SALIM","PCB","A","D","C","F","X","S","X"],
+        ["S6064/0707","M","SALUM ALI SALUM","PCB","B","D","E","F","X","S","X"],
+        ["S6064/0708","M","SAMIR YUSSUF ABDALLA","PCB","D","S","S","F","X","S","X"],
+        ["S6064/0709","M","SHABAN ISMAIL KANJU","PCB","D","C","C","F","X","F","X"],
+        ["S6064/0710","M","SUHEYL RAMADHAN JUMA","PCB","E","E","E","F","X","F","X"],
+        ["S6064/0711","M","SULEIMAN ALLY SALUM","PCB","B","C","D","S","X","D","X"],
+        ["S6064/0712","M","SWALEH SALUM RASHID","PCB","A","D","E","E","X","F","X"],
+        ["S6064/0713","M","UBWA JUMA UBWA","PCB","C","B","E","F","X","E","X"],
+        ["S6064/0714","M","YAHYA KHAMIS SHEHA","PCB","B","E","E","F","X","F","X"],
+        ["S6064/0715","M","YASSIR HASSAN KADIRIA","PCB","E","E","E","F","X","F","X"],
+        ["S6064/0716","M","YUNUSI KOMBO MAKAME","PCB","E","D","S","S","X","F","X"],
+        ["S6064/0717","M","ZUBEIR IDDI ABASS","PCB","D","E","S","F","X","E","X"],
+        // CBG Students (0718-0794)
+        ["S6064/0718","F","AHLAAM RASHID MBARAK","CBG","E","S","X","F","X","F","C"],
+        ["S6064/0719","F","AISHA ALI MOHAMMED","CBG","D","S","X","F","X","S","D"],
+        ["S6064/0720","F","AISHA MOHAMEDI MKAUJA","CBG","X","X","X","X","X","X","X"],
+        ["S6064/0721","F","AMINA HASSAN ALI","CBG","D","D","X","F","X","F","C"],
+        ["S6064/0722","F","AMINA KHAMIS ISSA","CBG","C","S","X","F","X","F","D"],
+        ["S6064/0723","F","ASHA MAKAME AMOUR","CBG","X","X","X","X","X","C","X"],
+        ["S6064/0724","F","ASIA HUSSEIN ALLY","CBG","C","E","X","D","X","E","B"],
+        ["S6064/0725","F","ASMA SALUM ABDALLA","CBG","C","E","X","F","X","F","C"],
+        ["S6064/0726","F","AYYAM GHARIB KHALID","CBG","E","E","X","F","X","F","C"],
+        ["S6064/0727","F","BAHATI MASOUD ALI","CBG","D","S","X","F","X","F","C"],
+        ["S6064/0728","F","BIMKUBWA MASOUD ALI","CBG","D","E","X","F","X","F","B"],
+        ["S6064/0729","F","FADYA HAMID HAFIDH","CBG","S","E","X","F","X","F","D"],
+        ["S6064/0730","F","FATMA KHATIB JUMA","CBG","D","S","X","F","X","F","D"],
+        ["S6064/0731","F","FATMA SILIMA FAKI","CBG","C","E","X","F","X","F","S"],
+        ["S6064/0732","F","HAFSA HASSAN KHAMIS","CBG","X","X","X","X","X","X","X"],
+        ["S6064/0733","F","HAITHAM HAIDAR SEIF","CBG","X","X","X","X","X","X","X"],
+        ["S6064/0734","F","HALIMA ABDALLA ABDILLAH","CBG","E","F","X","F","X","F","D"],
+        ["S6064/0735","F","HAWA HAMAD AMOUR","CBG","E","S","X","F","X","F","B"],
+        ["S6064/0736","F","HUZAIMA SAID KHAMIS","CBG","C","E","X","F","X","S","C"],
+        ["S6064/0737","F","JOKHA MOHAMED HAJI","CBG","A","D","X","D","X","D","B"],
+        ["S6064/0738","F","KAUTHAR HUSSEIN CHOUM","CBG","D","S","X","F","X","E","B"],
+        ["S6064/0739","F","KAUTHAR MOHAMED ALI","CBG","D","F","X","F","X","F","E"],
+        ["S6064/0740","F","KHAIRAT KHATIB RAMADHAN","CBG","D","S","X","F","X","F","C"],
+        ["S6064/0741","F","KHAIRAT USSI ALI","CBG","D","S","X","F","X","F","C"],
+        ["S6064/0742","F","MARIAM ISSA HASSAN","CBG","C","S","X","F","X","F","C"],
+        ["S6064/0743","F","MARYAM HAJI KHATIB","CBG","D","S","X","F","X","E","E"],
+        ["S6064/0744","F","MULHAT MBAROUK SEIF","CBG","C","S","X","F","X","F","C"],
+        ["S6064/0745","F","MUZNA ALI MAKAME","CBG","C","S","X","F","X","E","C"],
+        ["S6064/0746","F","MWASHAMBA AMOUR SEIF","CBG","D","E","X","F","X","F","C"],
+        ["S6064/0747","F","NAJMA ABDALLA ALI","CBG","D","F","X","F","X","F","S"],
+        ["S6064/0748","F","NASSRA SALUM ALLY","CBG","D","E","X","F","X","F","C"],
+        ["S6064/0749","F","RAYA ZUBEIR HEMED","CBG","D","S","X","X","X","X","C"],
+        ["S6064/0750","F","REHEMA SEIF HAJI","CBG","E","S","X","F","X","F","C"],
+        ["S6064/0751","F","SABRINA KASSIM MOHAMED","CBG","D","E","X","F","X","E","D"],
+        ["S6064/0752","F","SAFIA HEMED HUMOUD","CBG","X","X","X","X","X","X","X"],
+        ["S6064/0753","F","SALHA ABDULLA RAMADHAN","CBG","E","E","X","F","X","S","B"],
+        ["S6064/0754","F","SALHA SALUM MSABAH","CBG","D","S","X","F","X","E","C"],
+        ["S6064/0755","F","SALMA HASSAN MBAROUK","CBG","D","E","X","F","X","F","C"],
+        ["S6064/0756","F","SHADIA OTHUMANI HAMADI","CBG","C","S","X","F","X","F","D"],
+        ["S6064/0757","F","SHADIYA YUSSUF AME","CBG","D","E","X","S","X","F","C"],
+        ["S6064/0758","F","SHADYA ABDALLAH SHARIA","CBG","E","F","X","F","X","F","E"],
+        ["S6064/0759","F","SHIEKH SALUM RASHID","CBG","E","S","X","F","X","S","S"],
+        ["S6064/0760","F","SUMAIYA SEIF SALEH","CBG","E","S","X","F","X","F","D"],
+        ["S6064/0761","F","TAR-WIYA ABDALLA OMAR","CBG","E","E","X","F","X","D","C"],
+        ["S6064/0762","F","THUREIYA KHEIR HAJI","CBG","E","S","X","F","X","F","C"],
+        ["S6064/0763","F","THUWAIBA ABEID ALI","CBG","D","S","X","F","X","F","C"],
+        ["S6064/0764","F","YUMNA ABDULLA SAID","CBG","E","S","X","F","X","E","C"],
+        ["S6064/0765","F","YUMNA MCHA ALI","CBG","A","D","X","F","X","E","C"],
+        ["S6064/0766","F","ZAINAB AMEIR KHALFAN","CBG","D","E","X","F","X","F","E"],
+        ["S6064/0767","F","ZULEHA KHATIB HAJI","CBG","C","E","X","F","X","E","C"],
+        ["S6064/0768","F","ZUWENA MTUMWA MACHANO","CBG","D","S","X","F","X","S","B"],
+        ["S6064/0769","M","ABDILLAHI YUSSUF MOHAMMED","CBG","D","F","X","F","X","F","C"],
+        ["S6064/0770","M","ABDUL-RAHIM RAMADHAN OTHMAN","CBG","D","F","X","F","X","E","D"],
+        ["S6064/0771","M","ABRAHMAN KASSIM ALLY","CBG","D","S","X","F","X","F","C"],
+        ["S6064/0772","M","ABUUKHUDHAYF HAMAD MOHAMMED","CBG","C","S","X","S","X","F","B"],
+        ["S6064/0773","M","ADIL HAMAD KHAMIS","CBG","B","E","X","S","X","F","E"],
+        ["S6064/0774","M","AHMAD JECHA KHATIB","CBG","C","S","X","F","X","E","C"],
+        ["S6064/0775","M","AHMED SUWEID ALI","CBG","S","S","X","F","X","S","C"],
+        ["S6064/0776","M","ALI HAMAD MGENI","CBG","E","S","X","F","X","F","C"],
+        ["S6064/0777","M","ALI JUMA ALI","CBG","D","S","X","F","X","D","C"],
+        ["S6064/0778","M","BAKAR OMAR MUHIDIN","CBG","D","F","X","F","X","F","B"],
+        ["S6064/0779","M","DAUDI KESI MUSSA","CBG","D","E","X","F","X","F","C"],
+        ["S6064/0780","M","FAHIM HEMED ABASS","CBG","E","E","X","F","X","E","C"],
+        ["S6064/0781","M","HABIL HAJI YUSSUF","CBG","E","F","X","F","X","F","C"],
+        ["S6064/0782","M","HASHIR ALI VUAA","CBG","S","F","X","F","X","F","C"],
+        ["S6064/0783","M","IDH-HAR MBARUKU ALI","CBG","E","E","X","S","X","F","D"],
+        ["S6064/0784","M","ISSA HAMAD HAJI","CBG","C","S","X","F","X","F","D"],
+        ["S6064/0785","M","KHALID AMEIR USSI","CBG","A","E","X","F","X","E","C"],
+        ["S6064/0786","M","KHATIB MAKAME MUSSA","CBG","C","E","X","F","X","S","B"],
+        ["S6064/0787","M","MOHAMED MWALIM HAMAD","CBG","D","E","X","S","X","F","C"],
+        ["S6064/0788","M","MUKRIMU RAMADHAN HUSSEIN","CBG","B","D","X","E","X","C","A"],
+        ["S6064/0789","M","MUSSA JOSEPH MARIRO","CBG","A","X","X","F","X","D","E"],
+        ["S6064/0790","M","MUSSA MSELLEM KHAMIS","CBG","E","F","X","F","X","S","C"],
+        ["S6064/0791","M","QAS-WAR JABIR MZEE","CBG","E","F","X","F","X","F","D"],
+        ["S6064/0792","M","RASHID SAID RASHID","CBG","E","F","X","F","X","F","C"],
+        ["S6064/0793","M","SAID SOUD SAID","CBG","E","S","X","F","X","F","D"],
+        ["S6064/0794","M","SWALEH SALUM ALI","CBG","D","F","X","F","X","F","B"]
+    ];
+
+    // Build final candidates with correct point calculation
+    const finalCandidates = [];
+    
+    rawData.forEach(row => {
+        let [cno, sex, name, combo, bioGrade, chemGrade, phyGrade, bamGrade, advMathGrade, gsGrade, geoGrade] = row;
+        let gradesList = [];
+        let coreGrades = [];
+        
+        // Add GS for display
+        gradesList.push(`GS:${gsGrade}`);
+        
+        if (combo === "PCM") {
+            // PCM students: NO BAM displayed, core = PHY, CHEM, ADV_MATH
+            gradesList.push(`PHY:${phyGrade}`); coreGrades.push(phyGrade);
+            gradesList.push(`CHEM:${chemGrade}`); coreGrades.push(chemGrade);
+            if (advMathGrade && advMathGrade !== "X") { gradesList.push(`ADV/MATH:${advMathGrade}`); coreGrades.push(advMathGrade); }
+            else { gradesList.push(`ADV/MATH:X`); coreGrades.push("X"); }
+            // Bio is displayed but NOT used for division calculation
+            if (bioGrade && bioGrade !== "X") gradesList.push(`BIO:${bioGrade}`);
+        } 
+        else if (combo === "PCB") {
+            // PCB students: core = PHY, CHEM, BIO; BAM is displayed but NOT used for division
+            gradesList.push(`PHY:${phyGrade}`); coreGrades.push(phyGrade);
+            gradesList.push(`CHEM:${chemGrade}`); coreGrades.push(chemGrade);
+            if (bioGrade && bioGrade !== "X") { gradesList.push(`BIO:${bioGrade}`); coreGrades.push(bioGrade); }
+            else { gradesList.push(`BIO:X`); coreGrades.push("X"); }
+            if (bamGrade && bamGrade !== "X") gradesList.push(`BAM:${bamGrade}`);
+            else if (bamGrade === "X") gradesList.push(`BAM:X`);
+        } 
+        else if (combo === "CBG") {
+            // CBG students: core = CHEM, BIO, GEO; BAM is displayed but NOT used for division
+            gradesList.push(`CHEM:${chemGrade}`); coreGrades.push(chemGrade);
+            if (bioGrade && bioGrade !== "X") { gradesList.push(`BIO:${bioGrade}`); coreGrades.push(bioGrade); }
+            else { gradesList.push(`BIO:X`); coreGrades.push("X"); }
+            if (geoGrade && geoGrade !== "X") { gradesList.push(`GEO:${geoGrade}`); coreGrades.push(geoGrade); }
+            else { gradesList.push(`GEO:X`); coreGrades.push("X"); }
+            if (bamGrade && bamGrade !== "X") gradesList.push(`BAM:${bamGrade}`);
+            else if (bamGrade === "X") gradesList.push(`BAM:X`);
+        }
+        
+        // Check if any core grade is not X (has actual data)
+        const hasValidCore = coreGrades.some(g => g !== "X");
+        
+        if (!hasValidCore) {
+            finalCandidates.push({cno, sex, name, division:"ABS", totalPoints:"-", subjects: gradesList.join(", ")});
+            return;
+        }
+        
+        let pointsArr = coreGrades.map(g => gradeToPoint[g] || 7);
+        pointsArr.sort((a,b)=>a-b);
+        let best3Points = pointsArr.slice(0,3).reduce((a,b)=>a+b,0);
+        let division = getDivision(best3Points);
+        
+        finalCandidates.push({cno, sex, name, division, totalPoints: best3Points, subjects: gradesList.join(", ")});
+    });
+
+    function renderTable(filterDiv, filterSex, searchTerm) {
+        let filtered = finalCandidates.filter(c => {
+            if(filterDiv !== "ALL" && c.division !== filterDiv) return false;
+            if(filterSex !== "ALL" && c.sex !== filterSex) return false;
+            if(searchTerm && !`${c.cno} ${c.name} ${c.division}`.toLowerCase().includes(searchTerm.toLowerCase())) return false;
+            return true;
+        });
+        let tbody = document.getElementById("tableBody");
+        tbody.innerHTML = "";
+        filtered.forEach(c => {
+            let row = tbody.insertRow();
+            row.insertCell(0).innerText = c.cno;
+            row.insertCell(1).innerText = c.sex;
+            row.insertCell(2).innerText = c.name;
+            let divClass = c.division==="ABS"?"div-ABS":`div-${c.division}`;
+            row.insertCell(3).innerHTML = `<span class="division-badge ${divClass}">${c.division}</span>`;
+            row.insertCell(4).innerText = c.totalPoints !== "-" ? c.totalPoints : "-";
+            row.insertCell(5).innerHTML = `<div class="subject-cell">${c.subjects}</div>`;
+        });
+        
+        let counts = {I:0,II:0,III:0,IV:0,0:0,ABS:0};
+        let fCounts={I:0,II:0,III:0,IV:0,0:0}, mCounts={I:0,II:0,III:0,IV:0,0:0};
+        let fAbsent=0, mAbsent=0;
+        
+        finalCandidates.forEach(c => {
+            if(c.division === "ABS") {
+                if(c.sex === "F") fAbsent++;
+                else if(c.sex === "M") mAbsent++;
+                counts.ABS++;
+            } else {
+                if(counts[c.division] !== undefined) counts[c.division]++;
+                if(c.sex==="F") fCounts[c.division]=(fCounts[c.division]||0)+1;
+                if(c.sex==="M") mCounts[c.division]=(mCounts[c.division]||0)+1;
+            }
+        });
+        
+        document.getElementById("divisionSummaryPanel").innerHTML = `
+            <div class="summary-title">📊 DIVISION PERFORMANCE SUMMARY (PRE-NECTA 2026)</div>
+            <table class="summary-table">
+                <thead><tr><th>Division</th><th>Points Range</th><th>Total Students</th><th>Female</th><th>Male</th></tr></thead>
+                <tbody>
+                    <tr><td class="div-I">Division I</td><td>3 - 9</td><td>${counts.I||0}</td><td>${fCounts.I||0}</td><td>${mCounts.I||0}</td></tr>
+                    <tr><td class="div-II">Division II</td><td>10 - 12</td><td>${counts.II||0}</td><td>${fCounts.II||0}</td><td>${mCounts.II||0}</td></tr>
+                    <tr><td class="div-III">Division III</td><td>13 - 17</td><td>${counts.III||0}</td><td>${fCounts.III||0}</td><td>${mCounts.III||0}</td></tr>
+                    <tr><td class="div-IV">Division IV</td><td>18 - 19</td><td>${counts.IV||0}</td><td>${fCounts.IV||0}</td><td>${mCounts.IV||0}</td></tr>
+                    <tr><td class="div-0">Division 0 (Fail)</td><td>20 - 21</td><td>${counts[0]||0}</td><td>${fCounts[0]||0}</td><td>${mCounts[0]||0}</td></tr>
+                    <tr><td class="div-ABS">ABSENT</td><td>-</td><td>${counts.ABS||0}</td><td>${fAbsent}</td><td>${mAbsent}</td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 10px; font-size:0.75rem; color:#4b6a8b;">✔️ Points: A=1, B=2, C=3, D=4, E=5, S=6, F=7, X=7. Division based on sum of best 3 core subjects (PCM: PHY+CHEM+ADV/MATH | PCB: PHY+CHEM+BIO | CBG: CHEM+BIO+GEO).</div>`;
+    }
+    
+    document.getElementById("searchInput").addEventListener("input", (e) => renderTable(document.getElementById("divisionFilter").value, document.getElementById("sexFilter").value, e.target.value));
+    document.getElementById("divisionFilter").addEventListener("change", () => renderTable(document.getElementById("divisionFilter").value, document.getElementById("sexFilter").value, document.getElementById("searchInput").value));
+    document.getElementById("sexFilter").addEventListener("change", () => renderTable(document.getElementById("divisionFilter").value, document.getElementById("sexFilter").value, document.getElementById("searchInput").value));
+    document.getElementById("resetFiltersBtn").addEventListener("click", () => { document.getElementById("divisionFilter").value="ALL"; document.getElementById("sexFilter").value="ALL"; document.getElementById("searchInput").value=""; renderTable("ALL","ALL",""); });
+    renderTable("ALL","ALL","");
+</script>
+</body>
+</html>
+```
